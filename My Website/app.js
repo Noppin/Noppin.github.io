@@ -128,6 +128,7 @@ navigate.forEach((x)=>{
             toggle.checked = false;
             navContent.classList.remove("open");
             x = destination;
+            console.log(navContent.getBoundingClientRect().height, window.innerHeight);
         }    
         else{
             x = destination - navHeight;
