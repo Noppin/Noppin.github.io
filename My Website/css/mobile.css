@@ -1,0 +1,112 @@
+
+#main-navbar .container .toggle{
+    transform: scale(1);
+}
+#main-navbar .container .hamburger{
+    transform: scale(1);
+}
+#main-navbar .container .navigation-content{
+    display: none;
+     background-color: rgba(255, 255, 255, 0.9);
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.current{
+    background-color: transparent;
+    color: #333;
+}
+#main-navbar{background-color: transparent;}
+
+#main-navbar .container .toggle:checked + .hamburger > *
+{
+    transform: rotate(135deg);
+}
+.toggle:checked #main-navbar
+{
+    height: 100vh;
+}
+
+#main-navbar .container .toggle:checked + .hamburger > *:first-child{
+    top: 2px;
+}
+
+#main-navbar .container .toggle:checked + .hamburger > *:last-child{
+    top: -2px;
+    transform: rotate(225deg);
+}
+#main-navbar .container .toggle:checked:hover + .hamburger > *{
+    transform: rotate(225deg);
+}
+#main-navbar .container .toggle:checked:hover + .hamburger > *:last-child{
+    transform: rotate(315deg);
+}
+#main-navbar .navigation-content .social{
+   position: absolute;
+   bottom: 30px;
+}
+
+#main-navbar .navigation-content > .list{
+    position: absolute;
+   flex-direction: column;
+   margin: auto;
+}   
+#main-navbar .navigation-content > .list li{
+   padding: 2rem;
+}   
+#main-navbar .navigation-content > .list li a {
+   font-size: 2rem;
+}   
+
+#main-navbar .navigation-content > a h2{
+    display: none;
+}
+#main-navbar .navigation-content .social i{
+    margin-top: 3rem;
+}
+
+#main-header .container .header-content h1{
+    font-size: 4rem;
+}
+#main-header .container .header-content p{
+    font-size: 2rem;
+}
+#main-section .container .cards .card{
+    padding-bottom:3rem;
+}
+#main-section .container .cards .card:first-child{
+    display: block;
+}
+#main-section .container .cards .card:last-child{
+    display: block;
+}
+
+#main-section .container .cards{
+    display: flex;
+    flex-direction: column;
+    gap: 2.6rem;
+
+}
+#main-section .container .cards .card:nth-child(5){
+    display: block;
+}
+
+#main-hobby .container .hobby-showcase > h1{
+    font-size: 4rem;
+} 
+#main-hobby .container .hobby-showcase > p{
+    font-size: 2rem;
+} 
+#anime-hobby .container > h2{
+    font-size: 2.5rem;
+}
+#anime-hobby .container .anime-content > div >.text-content> h4{
+    font-size: 1.4rem;
+}
+#anime-hobby .container .anime-content div >.text-content >p {
+    font-size: 1rem;
+    width: 100%;
+}
+
+

@@ -1,0 +1,671 @@
+:root{
+    --primary-color: #5F97AA;
+    --secondary-color: #18363E;
+    --primary-dark-color: #2D5F6E;
+    --max-width: 1100px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+html{
+    font-size: 10px;
+}
+h1{
+    font-size: 6.4rem;
+}
+h2{
+    font-size: 4rem;
+}
+h3{
+    font-size: 3rem;
+}
+h4{
+    font-size: 1.7rem;
+}
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    font-weight:500;
+}
+
+.container{
+    max-width: var(--max-width);
+    margin: auto;
+    overflow: hidden;
+}
+p{
+    padding: 1.6rem 0;
+    font-size: 2rem;
+}
+img{
+    width: 100%;
+ }
+/* Utilities */
+.py-1{padding: 1.5rem;}
+.py-2{padding: 2rem;}
+.py-3{padding: 3rem;}
+
+.p-1{padding: 1.5rem;}
+.p-2{padding: 2rem;}
+.p-3{padding: 3rem;}
+
+.btn{
+    background: var(--primary-dark-color);
+    color: #fff;
+    padding: 1.2rem 2rem;
+    font-size: 1.6rem;
+    border: none;
+    border-radius: 15px;
+}
+
+/* Navbar */
+#main-navbar{
+    color: #333;
+    font-size: 1.6rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    background-color: #fff;
+}
+
+#main-navbar .container .toggle{
+    position: absolute;
+    top:15px;
+    left: 15px;
+    height: 6rem;
+    width: 6rem;
+    transform: scale(0);
+    opacity: 0;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#main-navbar .container .hamburger{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    height: 6rem;
+    width: 6rem;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    transform: scale(0);
+    z-index: 1;
+}
+
+#main-navbar .container .hamburger >*{
+    position: relative;
+    background-color: #fff;
+    height: 2px;
+    width: 50%; 
+    transition: all 0.3s ease-in-out;
+}
+
+#main-navbar .container .hamburger >*:first-child{
+    top: -10px;
+}
+#main-navbar .container .hamburger >*:last-child{
+    top: 10px;
+}
+
+.current{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.open{
+    display: flex !important;
+}
+#main-navbar .container .navigation-content{
+    position: relative;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+#main-navbar .navigation-content > a{
+    flex: 1;
+}
+#main-navbar .navigation-content > a h2{
+    font-size: 3.5rem;
+    text-align: center;
+    color: var(--primary-dark-color);
+}
+#main-navbar .navigation-content .social{
+    flex: 1;
+    text-align: center;
+}
+#main-navbar .navigation-content .social i{
+    margin-right: 1.8rem;
+    transition: all 0.2s ease-in-out;
+}
+#main-navbar .navigation-content ul{
+    display: flex;
+    list-style: none;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+}
+#main-navbar .navigation-content ul li a {
+    padding: 1.6rem;
+    transition: background 0.2s ease-in-out;
+    width: max-content;
+}
+
+#main-navbar .navigation-content ul li a:hover{
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+#main-navbar .navigation-content .social i:hover{
+    color: var(--primary-color);
+}
+
+/* Header */
+#main-header{
+    background-color: #333;
+    height: 100vh;
+    color: #fff;
+    z-index: 1;
+    position: relative;
+}
+
+#main-header::before{
+    content: '';
+    background-image: url(../img/aesthetic.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.2;
+}
+#main-header .container{
+    height: 100%;
+}
+#main-header .container .header-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    align-items: center;
+    transform: translateY(-200px);
+    transition: all 0.3s ease-in-out;
+    animation: tran 1.5s forwards;
+    opacity: 0;
+    z-index: 1;
+}
+
+@keyframes tran{
+ to{
+    transform: translateY(0);
+    opacity: 1;
+ }
+}
+#main-header .container .header-content h1{
+    font-size: 6.4rem;
+}
+#main-header .container .header-content p{
+    margin: 1rem 3rem;
+    font-size: 3rem;
+}
+
+#main-header .container .header-content a{
+    font-size: 2rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /*anything outside this container will be hidden*/
+}
+#main-header .container .header-content a.btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #18363E;
+    z-index: -1;
+    transition: transform 0.2s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left; 
+    
+}
+#main-header .container .header-content a:hover::before{
+    transform: scaleX(1);
+}
+
+/* Cards */
+
+#main-section{
+    background-color: #eee;
+}
+#main-section .container .cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 1.6rem;
+}
+#main-section .container > h1{
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1.4rem;
+}
+
+#main-section .container .cards .card{
+    width: 100%;
+    background-color: #fff;
+    padding: 2rem;
+    text-align: left;
+    color: var(--primary-color);
+    border-radius: 20px;
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+#main-section .container .cards .card:first-child{
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    gap:2rem;
+    grid-column: 1 /span 2;
+}
+#main-section .container .cards .card:nth-child(2){
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+#main-section .container .cards .card:nth-child(4){
+    background-color: #333;
+    color: #fff;
+}
+
+#main-section .container .cards .card:nth-child(5)
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 1 /span 2;
+    gap: 2rem;
+    background-color: #333;
+    color: #fff;
+}
+
+#main-section .container .cards .card:nth-child(6){
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+#main-section .container .cards .card:last-child{
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    grid-column: 3;
+    grid-row: 3/ span 2;
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+#main-section .container .cards .card h3{
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+#main-section .container .cards .card p{
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+}
+#main-section .container .cards .card a.btn{
+    margin-bottom: 3rem !important;
+    font-size: 1rem;
+}
+
+/* Hobbies */
+
+#main-hobby{
+    background-color: #333;
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+    color: #fff;
+}
+
+#main-hobby::before{
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url(../img/anime\ hobbis\ lofi.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.34;
+    z-index: -1;
+}
+#main-hobby .container{
+    height: 100%;
+}
+#main-hobby .container .hobby-showcase{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.6rem;
+}
+#main-hobby .container .hobby-showcase > p{
+    margin: 10px 30px;
+    padding: 16px 0;
+    font-size: 3rem;
+}
+#main-hobby .container .hobby-showcase > a{
+    position: relative;
+    z-index: 1;
+    font-size: 2rem;
+    overflow: hidden;
+}
+#main-hobby .container .hobby-showcase a.btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #18363E;
+    z-index: -1;
+    transition: transform 0.2s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left; 
+}
+
+#main-hobby .container .hobby-showcase a.btn:hover::before{
+    transform: scale(1);
+}
+
+#anime-hobby{
+    background-color: #eee9e1;
+    position: relative;
+    z-index: 1;
+}
+#anime-hobby .container > h2{
+    margin: 3.5rem 0 2rem 0;
+    color: #333;
+    position: relative;
+}
+#anime-hobby .container > .add-anime{
+    display: flex;
+    width: 100%;
+    justify-content: end;
+}
+#anime-hobby .container > .add-anime > .userInput{
+   flex: 2;
+   width: 50%;
+   margin-right: 15rem;
+  justify-content: start;
+}
+#anime-hobby .container > .add-anime > .btn{
+
+   margin-right: 2rem;
+
+}
+
+#anime-hobby .container input[type="text"]{
+   padding: 1rem;
+   border: none;
+   display: inline-block;
+}
+#anime-hobby .container > .search-anime{
+    position: absolute;
+    right: 0;
+}
+#anime-hobby .container .anime-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    margin-bottom: 30px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#anime-hobby .container > .search-anime .btn{
+    position: relative;
+    text-align: center;
+    left: 480px;
+}
+#anime-hobby .container .btn:hover{
+   cursor: pointer;
+}
+
+#anime-hobby .container .anime-content >div{
+    display: flex;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #222;
+    border-radius: 18px;
+    box-shadow: 10px 10px 10px #aaa;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+#anime-hobby .container .anime-content > div::before{
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: var(--primary-color);
+   opacity: 0;
+   z-index: 1;
+   transform: scale(2) translateX(-75%) translateY(-75%) rotate(-65deg);
+   transition: opacity 0.5s ease-in-out, transform 0.75s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+#anime-hobby .container .anime-content > div:hover::before{
+    transform: scale(2) translateX(0) translateY(0) rotate(0);
+    opacity: 0.85;
+}
+
+#anime-hobby .container .anime-content > div:hover
+{
+    transform: scale(0.96);
+}
+#anime-hobby .container .anime-content > div:hover > .text-content{
+    transform: translateY(0);
+    opacity: 1;
+}
+#anime-hobby .container .anime-content > div:hover > img{
+    transform: scale(1.14);
+    z-index: -1;
+}
+#anime-hobby .container .anime-content > div > .delete{
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.48);
+    z-index: 1;
+    align-self: center;
+    padding: 0.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: transform 0.4s 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+#anime-hobby .container .anime-content > div > .delete > div{
+    width: 50%;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+#anime-hobby .container .anime-content > div > .delete > div:first-child{
+    top: 1px;
+    transform: rotate(135deg);  
+}
+#anime-hobby .container .anime-content > div > .delete > div:last-child{
+    top: -1px;
+    transform: rotate(225deg);
+}
+#anime-hobby .container .anime-content > div:hover > .delete{
+    opacity: 1;
+    transform: translateY(0px);
+}
+#anime-hobby .container .anime-content > div > .delete:hover > div:first-child{
+    transform: rotate(225deg);
+}
+#anime-hobby .container .anime-content > div > .delete:hover > div:last-child{
+    transform: rotate(315deg);
+}
+   
+
+#anime-hobby .container .anime-content > div > img{
+    transition: transform 0.4s ease-in-out;
+    margin: auto;
+    height: 100%;
+    width: 120%;
+} 
+
+#anime-hobby .container .anime-content > div >.text-content{
+    position: absolute;
+    transform: translateY(-200%);
+    color: #fff;
+    opacity: 0;
+    padding: 0 1rem;
+    align-self: center;
+    z-index: 1;
+    transition: transform 0.4s 500ms cubic-bezier(0.075, 0.82, 0.165, 1),
+                opacity 0.5s ease-in-out;
+}
+#anime-hobby .container .anime-content > div >.text-content> h4{
+    margin-top: 10px;
+}
+#anime-hobby .container .anime-content div >.text-content >p {
+    font-size: 1.6rem;
+}
+
+/* Projects */
+
+#main-projects .container  > h2{
+    margin: 3.5rem 0 2rem 0;
+    text-align: center;
+    color: #333;
+}
+
+@media screen and (max-width: 450px){
+    #anime-hobby .container .anime-content div{
+        width: 100%;
+    }
+    #main-header .container .header-content h1,
+    #main-hobby .container .hobby-showcase h1{
+    font-size: 5rem;
+    }
+    #main-header .container .header-content p,
+    #main-hobby .container .hobby-showcase p{
+    font-size: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 655px){
+    #anime-hobby .container .anime-content{
+        grid-template-columns: 1fr;   
+    }
+    #anime-hobby .container .anime-content div{
+        justify-self: center;
+        width: 65%;
+    }
+    #main-header .container .header-content h1,
+    #main-hobby .container .hobby-showcase h1{
+    font-size: 6rem;
+    }
+    #main-header .container .header-content p,
+    #main-hobby .container .hobby-showcase p{
+    font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 656px){
+    #anime-hobby .container .anime-content{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #main-section .container .cards{
+      
+        grid-template-columns: repeat(2, 1fr);
+       
+    }
+    #main-section .container .cards .card:first-child{
+        display: block;
+        grid-column: 1;
+    }   
+    #main-section .container .cards .card:nth-child(2){
+        grid-column: 2;
+        grid-row: 1;
+    } 
+    #main-section .container .cards .card:nth-child(5){
+        display: block;
+        grid-column: 1;
+        grid-row: 3;
+    }
+    #main-section .container .cards .card:last-child{
+        grid-column: 2;
+        grid-row: 3;
+    }   
+      
+}
+
+/* @media screen and (max-width: 1100px){
+    #main-section .container .cards .card:first-child{
+        display: block;
+        grid-column: 1;
+    }                      
+    #main-section .container .cards .card:nth-child(2){
+        grid-column: 2;
+        grid-row: 1;
+    }  
+    #main-section .container .cards .card:nth-child(5){
+        display: block;
+        grid-column: 1;
+        grid-row: 3;
+    }  
+    #main-section .container .cards .card:last-child{
+        grid-column: 2;
+        grid-row: 3;
+    }                    
+} */
+
