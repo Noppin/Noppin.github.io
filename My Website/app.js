@@ -117,14 +117,13 @@ const navigate = document.querySelectorAll(".list li a");
 navigate.forEach((x)=>{
     x.addEventListener("click", (e)=>{
         e.preventDefault();
-
         const navHeight = document.getElementById("main-navbar").getBoundingClientRect().height;
         const id = e.target.getAttribute("href").slice(1);
         const destination = document.getElementById(id).offsetTop;
        
         let x = 0;
         console.log(navContent.getBoundingClientRect().height);
-        if(navContent.getBoundingClientRect().height === window.innerHeight){
+        if(window.innerWidth <= 800){
             toggle.checked = false;
             navContent.classList.remove("open");
             x = destination;
